@@ -6,6 +6,7 @@ public class Container implements Cloneable{
 
     private int x1;
     private int x2;
+    private static int counter;
     
     private Container(Container container) {
 	this.x1 = container.x1;
@@ -17,8 +18,6 @@ public class Container implements Cloneable{
 	this.x2 = x2;
 	counter = 4;
     }
-    
-    private static int counter;
     
     @Override
     public Object clone() throws CloneNotSupportedException{
@@ -33,7 +32,7 @@ public class Container implements Cloneable{
 	return new Container(c);
     }
     
-    private static class Holder {
+    public static class Holder {
 	private static int improvisedCounter;
 	
 	public static int getInprovisedCounter() {
